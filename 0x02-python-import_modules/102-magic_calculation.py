@@ -1,21 +1,17 @@
-#!/usr/bin/python3
+from magic_calculation_102 import add, sub
 
 def magic_calculation(a, b):
-    """Perform calculations based on the values of a and b."""
-    from magic_calculation_102 import add, sub
+    add_result = add(a, b)
+    
+    if add_result < 0:
+        return add_result
 
-    try:
-        if a < b:
-            result = add(a, b)
-            for i in range(4, 6):
-                result = add(result, i)
-        else:
-            result = sub(a, b)
-    except Exception as e:
-        print(f"An error occurred: {e}")
-        result = None
+    sub_result = sub(a, b)
 
-    return result
+    for i in range(4, 6):
+        add_result = add(add_result, i)
+
+    return add_result
 
 if __name__ == "__main__":
     a = 10  # Example values for testing
