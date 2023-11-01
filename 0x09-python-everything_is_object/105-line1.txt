@@ -1,0 +1,2 @@
+Before the execution of line 2 (print("Love")), no int objects have been created and are still in memory.
+
